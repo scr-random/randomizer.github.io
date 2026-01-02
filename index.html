@@ -7,37 +7,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCR Randomizer</title>
     <style>
-        body { font-family: 'Ubuntu', sans-serif; text-align: center; background-color: #10203B; }
-        
-        /* 1. CHANGE BACKGROUND COLOR HERE */
-        .container { 
-            max-width: 800px; 
-            margin: auto; 
-            padding: 20px; 
-            background: #5C6971; /* Changed from white to a light blue-grey */
-            border-radius: 5px; 
+        /* 1. CONFIGURATION - Adjust the scale here (1.2 = 120%, 1.5 = 150%, etc.) */
+        :root {
+            --app-scale: 1.25; 
+            --base-width: 392px;
+            --base-height: 620px;
         }
 
-        iframe { border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        body { 
+            font-family: 'Ubuntu', sans-serif; 
+            text-align: center; 
+            background-color: #10203B; 
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container { 
+            max-width: 900px; 
+            margin: auto; 
+            padding: 20px; 
+            background: #5C6971; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
 
-        /* Optional: Style for your new logo/title image */
         .title-image {
             max-width: 100%;
             height: auto;
             margin-bottom: 10px;
         }
+
+        /* 2. THE SCALING ENGINE */
+        #app-wrapper {
+            /* This box calculates the new size based on your scale variable */
+            width: calc(var(--base-width) * var(--app-scale));
+            height: calc(var(--base-height) * var(--app-scale));
+            margin: 20px auto;
+            overflow: hidden; /* Clips the iframe if it misbehaves */
+            position: relative;
+            border-radius: 8px;
+            background: #000; /* Black background behind app while loading */
+        }
+
+        #app-wrapper iframe {
+            width: var(--base-width);
+            height: var(--base-height);
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+            /* The magic: scales the app without distorting it */
+            transform: scale(var(--app-scale));
+            transform-origin: top left;
+            
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* 3. MOBILE RESPONSIVENESS */
+        /* If the screen is smaller than the scaled app, reset scale to 1.0 */
+        @media (max-width: 500px) {
+            :root {
+                --app-scale: 1.0;
+            }
+            .container {
+                padding: 10px;
+            }
+        }
+
+        a { text-decoration: none; }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="assets/randomizerlogostatic.png" alt="SCR Randomizer" class="title-image">
         
-        <p style="color: #1C1C1C;">Welcome! View the repository here: <a href = "https://github.com/scr-randomizer/home/" style="color: #2F8CF9;">https://github.com/scr-randomizer/home/</a></p>
+        <p style="color: #1C1C1C; font-weight: bold;">
+            Welcome! View the repository here: 
+            <br>
+            <a href="https://github.com/scr-randomizer/home/" style="color: #2F8CF9;">github.com/scr-randomizer/home/</a>
+        </p>
         
-        <div id="app-container">
-            <iframe width="392" height="620" style="border: 0px;" src="https://studio.code.org/projects/applab/oX2jWo6MP1MyG8B7RbwRQEXkhEfASOZKkOQTkTyByxR/embed?nosource"></iframe>
+        <div id="app-wrapper">
+            <iframe src="https://studio.code.org/projects/applab/oX2jWo6MP1MyG8B7RbwRQEXkhEfASOZKkOQTkTyByxR/embed?nosource"></iframe>
         </div>
-        <a href='https://ko-fi.com/R6R71RH2ZF' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi5.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
+        <div style="margin-top: 20px;">
+            <a href='https://ko-fi.com/R6R71RH2ZF' target='_blank'>
+                <img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi5.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' />
+            </a>
+        </div>
     </div>
 </body>
 </html>
