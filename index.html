@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCR Randomizer</title>
     <style>
-        /* 1. CONFIGURATION - Adjust the scale here (1.2 = 120%, 1.5 = 150%, etc.) */
+        /* Adjust the scale here (1.2 = 120%, 1.5 = 150%, etc.) */
         :root {
             --app-scale: 1.25; 
             --base-width: 392px;
@@ -37,34 +37,33 @@
             margin-bottom: 10px;
         }
 
-        /* 2. THE SCALING ENGINE */
-        #app-wrapper {
-            /* This box calculates the new size based on your scale variable */
-            width: calc(var(--base-width) * var(--app-scale));
-            height: calc(var(--base-height) * var(--app-scale));
-            margin: 20px auto;
-            overflow: hidden; /* Clips the iframe if it misbehaves */
-            position: relative;
-            border-radius: 8px;
-            background: #000; /* Black background behind app while loading */
-        }
+      
+    #app-wrapper {
+        /* We define the size of the "Window" we want to see (the app screen) */
+        width: calc(320px * var(--app-scale)); 
+        height: calc(450px * var(--app-scale));
+        margin: 20px auto;
+        overflow: hidden; /* This cuts off the bezels */
+        position: relative;
+        border: 4px solid #1C1C1C;
+        border-radius: 15px;
+    }
 
-        #app-wrapper iframe {
-            width: var(--base-width);
-            height: var(--base-height);
-            border: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            
-            /* The magic: scales the app without distorting it */
-            transform: scale(var(--app-scale));
-            transform-origin: top left;
-            
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
+    #app-wrapper iframe {
+        /* The iframe stays at its full 'phone' size */
+        width: 392px;
+        height: 620px;
+        border: none;
+        position: absolute;
 
-        /* 3. MOBILE RESPONSIVENESS */
+        /* Move the iframe UP and LEFT to hide the black edges */
+        top: calc(-37px * var(--app-scale)); 
+        left: calc(-36px * var(--app-scale));
+    
+        transform: scale(var(--app-scale));
+        transform-origin: top left;
+    }
+
         /* If the screen is smaller than the scaled app, reset scale to 1.0 */
         @media (max-width: 500px) {
             :root {
