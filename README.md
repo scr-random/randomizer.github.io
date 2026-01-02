@@ -2,7 +2,7 @@
 ![SCR Randomizer](assets/scrrandomizerlogo-anifc.gif)
 ### ⬇️⬇️⬇️USE THIS LINK TO ACCESS THE SITE!⬇️⬇️⬇️
 ### https://scr-randomizer.github.io/home
-### ‼️VOTE FOR THE NEXT SCR RANDOMIZER UPDATE HERE‼️https://ko-fi.com/soultropolis
+### ‼️VOTE FOR THE NEXT SCR RANDOMIZER UPDATE HERE‼️[VOTE HERE](https://ko-fi.com/soultropolis)
 
 
 [<img src="https://storage.ko-fi.com/cdn/kofi6.png?v=6" height="36" alt="Buy Me a Coffee at ko-fi.com">](https://ko-fi.com/R6R71RH2ZF)
