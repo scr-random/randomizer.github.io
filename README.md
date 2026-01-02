@@ -14,3 +14,5 @@ Each randomization feature filters down all of the operator, train, and route da
 Links to the official 'SCR Hub Site', which provides more information and statistics about the SCR network and its current services and activity across its servers, are provided for convenience.
 
 The References page details all of the online resources used in creating this program.
+
+While you may encounter bugs or issues in the program, as it is relatively new, please suggest any improvements and bug reports on the issues page of this repository.
