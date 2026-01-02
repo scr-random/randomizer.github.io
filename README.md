@@ -5,7 +5,7 @@
 ### ‼️VOTE FOR THE NEXT SCR RANDOMIZER UPDATE HERE‼️https://ko-fi.com/soultropolis
 
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R71RH2ZF)
+<a href='https://ko-fi.com/R6R71RH2ZF' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 The SCR Randomizer gives drivers in the Roblox railway network simulation game, Stepford County Railway, an intuitive and useful way to randomize what operators, trains, and routes they will drive by filtering and randomizing the available options for drivers in the game.
 
